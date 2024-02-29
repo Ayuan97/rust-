@@ -558,7 +558,7 @@
     "playerJustDisconnectedFrom": "\"{name}\" 刚刚与 {server} 断开连接.",
     "playerJustDisconnectedTracker": "\"{name}\" 刚刚与跟踪器 {tracker} 断开连接。",
     "playerJustReturned": "\"{name}\" 回来了 上次活动在({time})前.",
-    "playerJustWentAfk": "\"{name}\" 刚刚离开了一会...",
+    "playerJustWentAfk": "\"{name}\" 已离开五分钟",
     "playerLeftTheTeam": "\"{name}\" 离开了团队。",
     "playerNotPairedWithServer": "Leader command does not work because {name} is not paired with the server.",
     "players": "Players",
