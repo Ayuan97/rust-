@@ -2425,19 +2425,18 @@ class RustPlus extends RustPlusLib {
         const amount = `(${this.team.players.length}) `;
         //计算在线人数
         let onlinenumber = 0;
+        let offlineNumber = 0;
         for (const player of this.team.players) {
             if (player.isOnline) {
                 string += `${player.name}, `;
                 onlinenumber += 1;
             }else{
+                offlineNumber += 1;
                 offlinename += `${player.name}, `
             }
 
         }
-        let offline = 0
-        offline = amount - onlinenumber
-        
-        return string !== '' ? '总人数' + amount + ' 在线人数 ' + onlinenumber + ' 离线人数 ' + offline + '离线人员:' + offlinename: null ;
+        return string !== '' ? '总人数' + amount + ' 在线人数 ' + onlinenumber + ' 离线人数 ' + offlineNumber + '离线人员:' + offlinename: null ;
     }
 
     getCommandTime(isInfoChannel = false) {
