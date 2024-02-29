@@ -2436,7 +2436,7 @@ class RustPlus extends RustPlusLib {
             }
 
         }
-        return string !== '' ? '总人数' + amount + ' 在线人数 ' + onlinenumber + ' 离线人数 ' + offlineNumber + '离线人员:' + offlinename: null ;
+        return string !== '' ? '总人数' + amount + '在线人数(' + onlinenumber + ')离线人数(' + offlineNumber + ')离线人员:' + offlinename: null ;
     }
 
     getCommandTime(isInfoChannel = false) {
