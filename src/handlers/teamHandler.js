@@ -40,7 +40,7 @@ module.exports = {
 
         for (const steamId of leftPlayers) {
             const player = rustplus.team.getPlayer(steamId);
-            const str = client.intlGet(guildId, 'playerLeftTheTeam', { name: player.name });
+            let str = client.intlGet(guildId, 'playerLeftTheTeam', { name: player.name });
             await DiscordMessages.sendActivityNotificationMessage(
                 guildId, serverId, Constants.COLOR_GREY, str, steamId);
                 str += " 兄弟们加油 我先撤了！";
@@ -52,7 +52,7 @@ module.exports = {
         for (const steamId of newPlayers) {
             for (const player of teamInfo.members) {
                 if (player.steamId.toString() === steamId) {
-                    const str = client.intlGet(guildId, 'playerJoinedTheTeam', { name: player.name });
+                    let str = client.intlGet(guildId, 'playerJoinedTheTeam', { name: player.name });
                     await DiscordMessages.sendActivityNotificationMessage(
                         guildId, serverId, Constants.COLOR_ACTIVE, str, steamId);
                         //player name == koko 添加一句特别的话
@@ -72,7 +72,7 @@ module.exports = {
                 if (player.steamId === playerUpdated.steamId.toString()) {
                     if (player.isGoneDead(playerUpdated)) {
                         const location = player.pos === null ? 'spawn' : player.pos.string;
-                        const str = client.intlGet(guildId, 'playerJustDied', {
+                        let str = client.intlGet(guildId, 'playerJustDied', {
                             name: player.name,
                             location: location
                         });
@@ -92,7 +92,7 @@ module.exports = {
 
                     if (player.isGoneAfk(playerUpdated)) {
                         if (instance.generalSettings.afkNotify) {
-                            const str = client.intlGet(guildId, 'playerJustWentAfk', { name: player.name });
+                            let str = client.intlGet(guildId, 'playerJustWentAfk', { name: player.name });
                             //player name == koko 添加一句特别的话
                             if (player.name == "koko") {
                                 str = "koko: 整点吃的 马上就来 !";
@@ -105,7 +105,7 @@ module.exports = {
                     if (player.isAfk() && player.isMoved(playerUpdated)) {
                         if (instance.generalSettings.afkNotify) {
                             const afkTime = player.getAfkTime('dhs');
-                            const str = client.intlGet(guildId, 'playerJustReturned', {
+                            let str = client.intlGet(guildId, 'playerJustReturned', {
                                 name: player.name,
                                 time: afkTime
                             });
@@ -119,7 +119,7 @@ module.exports = {
                     }
 
                     if (player.isGoneOnline(playerUpdated)) {
-                        const str = client.intlGet(guildId, 'playerJustConnected', { name: player.name });
+                        let str = client.intlGet(guildId, 'playerJustConnected', { name: player.name });
                         //player name == koko 添加一句特别的话
                         if (player.name == "koko") {
                             str = " koko : 我已上线 状态良好！";
@@ -136,7 +136,7 @@ module.exports = {
                     }
 
                     if (player.isGoneOffline(playerUpdated)) {
-                        const str = client.intlGet(guildId, 'playerJustDisconnected', { name: player.name });
+                        let str = client.intlGet(guildId, 'playerJustDisconnected', { name: player.name });
                         await DiscordMessages.sendActivityNotificationMessage(
                             guildId, serverId, Constants.COLOR_INACTIVE, str, player.steamId);
                         //player name == koko 添加一句特别的话
