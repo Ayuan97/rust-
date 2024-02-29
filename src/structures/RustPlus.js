@@ -2448,7 +2448,7 @@ class RustPlus extends RustPlusLib {
             const currentTime = Client.client.intlGet(this.guildId, 'inGameTime', { time: time });
             const timeLeft = this.time.getTimeTillDayOrNight();
 
-            if (timeLeft === null) return currentTime;
+            // if (timeLeft === null) return currentTime;
 
             const locString = this.time.isDay() ? 'timeTillNightfall' : 'timeTillDaylight';
             const timeTilltransition = Client.client.intlGet(this.guildId, locString, { time: timeLeft });
