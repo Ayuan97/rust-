@@ -2420,8 +2420,14 @@ class RustPlus extends RustPlusLib {
         for (const player of this.team.players) {
             string += `${player.name}, `;
         }
-
-        return string !== '' ? `${string.slice(0, -2)}.` : null;
+        //计算队伍人数
+        const amount = `(${this.team.players.length}/6) `;
+        //计算在线人数
+        const online = `(${this.team.getOnlinePlayers().length}/6) `;
+        //计算离线人数
+        const offline = `(${this.team.getOfflinePlayers().length}/6) `;
+        
+        return string !== '' ? `${string.slice(0, -2)}.` + '总人数' + amount + '在线人数' + online + '离线人数' + offline : null ;
     }
 
     getCommandTime(isInfoChannel = false) {

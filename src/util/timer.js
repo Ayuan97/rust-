@@ -106,7 +106,7 @@ module.exports = {
 
         days += originalDays;
         if (days > 0 && !ignore.includes('d')) {
-            time += longAbbr ? `${days} days ` : `${days}d `;
+            time += longAbbr ? `${days} 天 ` : `${days}d `;
         }
         else if (days > 0 && ignore.includes('d')) {
             hours += (day / hour) * days;
@@ -114,7 +114,7 @@ module.exports = {
 
         hours += originalHours;
         if (hours > 0 && !ignore.includes('h')) {
-            time += longAbbr ? `${hours} hours ` : `${hours}h `;
+            time += longAbbr ? `${hours} 小时 ` : `${hours}h `;
         }
         else if (hours > 0 && ignore.includes('h')) {
             minutes += (hour / minute) * hours;
@@ -122,7 +122,7 @@ module.exports = {
 
         minutes += originalMinutes;
         if (minutes > 0 && !ignore.includes('m')) {
-            time += longAbbr ? `${minutes} min ` : `${minutes}m `;
+            time += longAbbr ? `${minutes} 分钟 ` : `${minutes}m `;
         }
         else if (minutes > 0 && ignore.includes('m')) {
             seconds += (minute / second) * minutes;
@@ -130,7 +130,7 @@ module.exports = {
 
         seconds += originalSeconds;
         if (seconds > 0 && !ignore.includes('s')) {
-            time += longAbbr ? `${seconds} sec ` : `${seconds}s`;
+            time += longAbbr ? `${seconds} 秒 ` : `${seconds}s`;
         }
 
         time = time.trim();
