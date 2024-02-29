@@ -124,6 +124,9 @@ module.exports = {
                         if (player.name == "koko") {
                             str = " koko : 我已上线 状态良好！";
                         }
+                        if (player.name == "qoqo") {
+                            str = " qoqo : 远哥我来了!";
+                        }
                         await DiscordMessages.sendActivityNotificationMessage(
                             guildId, serverId, Constants.COLOR_ACTIVE, str, player.steamId);
                         if (instance.generalSettings.connectionNotify) await rustplus.sendInGameMessage(str);
@@ -142,6 +145,9 @@ module.exports = {
                         //player name == koko 添加一句特别的话
                         if (player.name == "koko") {
                             str = "koko : 我先下了 兄弟们好好干！";
+                        }
+                        if (player.name == "qoqo") {
+                            str = "qoqo : 远哥我下了 大哥们再见!";
                         }
                         if (instance.generalSettings.connectionNotify) await rustplus.sendInGameMessage(str);
                         rustplus.log(client.intlGet(null, 'infoCap'),
