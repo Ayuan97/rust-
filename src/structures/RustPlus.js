@@ -2422,7 +2422,7 @@ class RustPlus extends RustPlusLib {
             string += `${player.name}, `;
         }
         //计算队伍人数
-        const amount = `(${this.team.players.length}/6) `;
+        const amount = `(${this.team.players.length}) `;
         //计算在线人数
         let onlinenumber = 0;
         for (const player of this.team.players) {
@@ -2437,7 +2437,7 @@ class RustPlus extends RustPlusLib {
         let offline = 0
         offline = amount - onlinenumber
         
-        return string !== '' ? `${string.slice(0, -2)}.` + '总人数' + amount + '在线人数 ' + onlinenumber + '离线人数 ' + offline + '离线人员:' + offlinename: null ;
+        return string !== '' ? '总人数' + amount + ' 在线人数 ' + onlinenumber + ' 离线人数 ' + offline + '离线人员:' + offlinename: null ;
     }
 
     getCommandTime(isInfoChannel = false) {
