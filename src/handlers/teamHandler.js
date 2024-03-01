@@ -96,6 +96,9 @@ module.exports = {
                             if (player.name == "koko") {
                                 str = "\"koko\": 整点吃的 马上就来 !";
                             }
+                            if (player.steamId == "76561199184156441"){
+                                str = "\"东哥\": 我去挂会儿机 你们不要给我哇哇叫"
+                            }
                             rustplus.sendInGameMessage(str);
                             rustplus.log(client.intlGet(null, 'infoCap'), str);
                         }
@@ -127,7 +130,7 @@ module.exports = {
                         }
                         if (player.name == "qoqo") {
                             rustplus.sendInGameMessage(" \"小晨\" : 歪?")
-                            str = " \"小晨\" : 歪? 有人吗 ? 歪?";
+                            str = " \"小辰\" : 歪? 有人吗 ? 歪?";
                         }
                         await DiscordMessages.sendActivityNotificationMessage(
                             guildId, serverId, Constants.COLOR_ACTIVE, str, player.steamId);
