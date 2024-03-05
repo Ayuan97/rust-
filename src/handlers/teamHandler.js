@@ -56,9 +56,6 @@ module.exports = {
                         guildId, serverId, Constants.COLOR_ACTIVE, str, steamId);
                         //player name == koko 添加一句特别的话
                     if (player.name == "koko") {
-                        rustplus.sendInGameMessage('歪')
-                        rustplus.sendInGameMessage('歪')
-                        rustplus.sendInGameMessage('歪')
                         str = "\"koko\": 我已加入队伍 目前状态良好！";
                     }
                     if (instance.generalSettings.connectionNotify) await rustplus.sendInGameMessage(str);
