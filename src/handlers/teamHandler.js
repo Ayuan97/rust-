@@ -43,7 +43,6 @@ module.exports = {
             let str = client.intlGet(guildId, 'playerLeftTheTeam', { name: player.name });
             await DiscordMessages.sendActivityNotificationMessage(
                 guildId, serverId, Constants.COLOR_GREY, str, steamId);
-                str += " 兄弟们加油 我先撤了！";
             if (instance.generalSettings.connectionNotify) await rustplus.sendInGameMessage(str);
             rustplus.log(client.intlGet(null, 'infoCap'), str);
             rustplus.updateConnections(steamId, str);
@@ -111,10 +110,14 @@ module.exports = {
                                 name: player.name,
                                 time: afkTime
                             });
+                            //挂机五分钟提示
+
                             //player name == koko 添加一句特别的话
                             if (player.name == "koko") {
-                                rustplus.sendInGameMessage('歪')
                                 str = "\"koko\" : 兄弟们开干 ! ";
+                            }
+                            if (player.steamId == "76561199184156441"){
+                                str = "\"东哥\": 没有哇哇叫吧"
                             }
                             rustplus.sendInGameMessage(str);
                             rustplus.log(client.intlGet(null, 'infoCap'), str);
@@ -132,6 +135,23 @@ module.exports = {
                             rustplus.sendInGameMessage(" \"小晨\" : 歪?")
                             str = " \"小辰\" : 歪? 有人吗 ? 歪?";
                         }
+                        //156
+                        if (player.steamId == "76561198393337318"){
+                            rustplus.sendInGameMessage("注意 灯光师已上线!")
+                        }
+                        //少年
+                        if (player.steamId == "76561198992065770"){
+                            rustplus.sendInGameMessage("注意 超级电工已上线!")
+                        }
+                        //she
+                        if (player.steamId == "76561198432126799"){
+                            rustplus.sendInGameMessage("超级旷工已上线! 奖励矿产一杯")
+                        }
+                        //哈迪斯
+                        if (player.steamId == "76561199154577635"){
+                            rustplus.sendInGameMessage("\"哈迪斯\" : 大菠萝给我来两把!")
+                        }
+
                         await DiscordMessages.sendActivityNotificationMessage(
                             guildId, serverId, Constants.COLOR_ACTIVE, str, player.steamId);
                         if (instance.generalSettings.connectionNotify) await rustplus.sendInGameMessage(str);
