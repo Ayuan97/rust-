@@ -145,7 +145,7 @@ module.exports = {
                         }
                         //she
                         if (player.steamId == "76561198432126799" || player.steamId == "76561198355015925"){
-                            rustplus.sendInGameMessage("超级旷工已上线! 奖励矿茶一杯")
+                            rustplus.sendInGameMessage("超级矿工已上线! 奖励矿茶一杯")
                         }
                         //哈迪斯
                         if (player.steamId == "76561199154577635"){
