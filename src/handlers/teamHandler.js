@@ -107,8 +107,6 @@ module.exports = {
                                 name: player.name,
                                 time: afkTime
                             });
-                            //挂机五分钟提示
-
                             //player name == koko 添加一句特别的话
                             if (player.name == "koko") {
                                 str = "\"koko\" : 兄弟们开干 ! ";
@@ -134,15 +132,23 @@ module.exports = {
                         }
                         //156
                         if (player.steamId == "76561198393337318"){
-                            rustplus.sendInGameMessage("注意 灯光师已上线!")
+                            rustplus.sendInGameMessage("注意 光影巨匠已上线!")
+                        }
+                        //东哥
+                        if (player.steamId == "76561199184156441"){
+                            rustplus.sendInGameMessage("注意 能源科技专家上线了!")
                         }
                         //少年
                         if (player.steamId == "76561198992065770"){
-                            rustplus.sendInGameMessage("注意 超级电工已上线!")
+                            rustplus.sendInGameMessage("注意 超级马里奥管道工上线了!")
+                        }
+                        //Super new
+                        if (player.name == "Super new"){
+                            rustplus.sendInGameMessage("副炮已上线! 请注意!")
                         }
                         //she
                         if (player.steamId == "76561198432126799" || player.steamId == "76561198355015925"){
-                            rustplus.sendInGameMessage("超级矿工已上线! 奖励矿茶一杯")
+                            rustplus.sendInGameMessage("空气与阳光探险者上线了! 奖励矿茶一杯")
                         }
                         //哈迪斯
                         if (player.steamId == "76561199154577635"){
@@ -164,13 +170,10 @@ module.exports = {
                         let str = client.intlGet(guildId, 'playerJustDisconnected', { name: player.name });
                         await DiscordMessages.sendActivityNotificationMessage(
                             guildId, serverId, Constants.COLOR_INACTIVE, str, player.steamId);
-                        //player name == koko 添加一句特别的话
-                        if (player.name == "koko") {
-                            str = "\"koko\" : 我先下了 兄弟们好好干！";
-                        }
                         if (player.name == "qoqo") {
-                            str = "\"小晨\" : 远哥我下了 大哥们再见!";
+                            str = "\"小辰\" : 远哥我下了 大哥们再见!";
                         }
+
                         if (instance.generalSettings.connectionNotify) await rustplus.sendInGameMessage(str);
                         rustplus.log(client.intlGet(null, 'infoCap'),
                             client.intlGet(null, 'playerJustDisconnectedFrom', {
